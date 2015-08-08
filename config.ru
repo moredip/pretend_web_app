@@ -3,6 +3,7 @@ $LOAD_PATH.unshift File.expand_path( "../lib", __FILE__ )
 require 'request_store'
 
 require 'web_store/app'
+require 'web_store/deals_gateway'
 require 'microscope_tracer/rack_middleware'
 
 if ENV['RACK_ENV'].downcase == 'development'
@@ -10,5 +11,9 @@ if ENV['RACK_ENV'].downcase == 'development'
   puts "running in DEV MODE!"
 end
 
-use MicroscopeTracer::RackMiddleware, 'web-store'
+$MICROSCOPE_SERVICE_NAME='web-store'
+
+use MicroscopeTracer::RackMiddleware, $MICROSCOPE_SERVICE_NAME
+
+WebStore::App.set( :deals_gateway, WebStore::DealsGateway.for_env )
 run WebStore::App

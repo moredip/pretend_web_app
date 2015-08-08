@@ -12,6 +12,7 @@ GEM
       thor (~> 0.19.1)
     haml (4.0.6)
       tilt
+    lazy_doc (0.4.0)
     method_source (0.8.2)
     microscope_tracer (0.2.0)
       request_store
@@ -55,6 +56,7 @@ DEPENDENCIES
   faraday_middleware
   foreman
   haml
+  lazy_doc
   microscope_tracer (~> 0.2.0)
   pry-nav
   puma

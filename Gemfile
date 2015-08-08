@@ -14,6 +14,7 @@ gem 'microscope_tracer', '~> 0.2.0'
 
 gem "faraday"
 gem "faraday_middleware"
+gem 'lazy_doc'
 
 group :development, :test do
   gem 'foreman'
