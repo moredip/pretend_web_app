@@ -11,9 +11,6 @@
           = "#{deal.sku}: $#{deal.price}"
         
     %section.products
-      %h1 All Products
-      %ul
-      - products.each do |product|
-        %li.product
-          %a{href: product_url(product)}
-            =product.name
+      %h1 
+        The product page for:  
+        = product.name
